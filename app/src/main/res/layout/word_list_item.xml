@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+    <variable
+      name="clickListener"
+      type="android.view.View.OnClickListener"/>
+    <variable
+      name="word"
+      type="com.noox.words.words.data.Word"/>
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="@{clickListener}">
+
+    <TextView
+      android:id="@+id/word_item_english"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@{word.english}"
+      android:textAppearance="?attr/textAppearanceListItem"
+      tools:text="English word"/>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
