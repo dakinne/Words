@@ -3,13 +3,34 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools">
 
-  <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/wordList"
+  <data>
+    <variable
+      name="viewModel"
+      type="com.noox.words.words.ui.WordListViewModel"/>
+  </data>
+
+  <FrameLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:clipToPadding="false"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    tools:context=".words.ui.WordListActivity"
-    tools:listitem="@layout/word_list_item" />
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/wordList"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:clipToPadding="false"
+      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      tools:context=".words.ui.WordListActivity"
+      tools:listitem="@layout/word_list_item" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="end|bottom"
+      android:layout_margin="@dimen/fab_margin"
+      app:srcCompat="@drawable/ic_plus_white_24dp"
+      android:onClick="@{() -> viewModel.onAddWordButtonClick()}"/>
+
+  </FrameLayout>
 
 </layout>
