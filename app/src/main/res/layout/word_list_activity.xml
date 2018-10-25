@@ -6,7 +6,7 @@ xmlns:tools="http://schemas.android.com/tools">
   <data>
     <variable
       name="viewModel"
-      type="com.noox.words.words.ui.WordListViewModel"/>
+      type="com.noox.words.words.ui.list.WordListViewModel"/>
   </data>
 
   <FrameLayout
@@ -19,7 +19,7 @@ xmlns:tools="http://schemas.android.com/tools">
       android:layout_height="match_parent"
       android:clipToPadding="false"
       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-      tools:context=".words.ui.WordListActivity"
+      tools:context=".words.ui.list.WordListActivity"
       tools:listitem="@layout/word_list_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

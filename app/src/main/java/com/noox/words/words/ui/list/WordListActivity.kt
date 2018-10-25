@@ -1,4 +1,4 @@
-package com.noox.words.words.ui
+package com.noox.words.words.ui.list
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil

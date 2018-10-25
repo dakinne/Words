@@ -1,4 +1,4 @@
-package com.noox.words.words.ui
+package com.noox.words.words.ui.list
 
 import com.noox.words.words.data.Word
 import com.noox.words.words.domain.CreateWordUseCase

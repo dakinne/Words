@@ -1,4 +1,4 @@
-package com.noox.words.words.ui
+package com.noox.words.words.ui.list
 
 import androidx.recyclerview.widget.RecyclerView
 import com.noox.words.databinding.WordListItemBinding

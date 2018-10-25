@@ -1,4 +1,4 @@
-package com.noox.words.words.ui
+package com.noox.words.words.ui.list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,8 +11,11 @@ class WordListAdapter : RecyclerView.Adapter<WordListViewHolder>() {
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordListViewHolder {
 
-    return WordListViewHolder(WordListItemBinding.inflate(
-        LayoutInflater.from(parent.context), parent, false))
+    return WordListViewHolder(
+      WordListItemBinding.inflate(
+        LayoutInflater.from(parent.context), parent, false
+      )
+    )
   }
 
   override fun getItemCount(): Int {

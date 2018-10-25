@@ -5,7 +5,7 @@ import com.noox.words.words.data.WordLocalDataSource
 import com.noox.words.words.data.WordRepository
 import com.noox.words.words.domain.CreateWordUseCase
 import com.noox.words.words.domain.GetAllWordsUseCase
-import com.noox.words.words.ui.WordListViewModel
+import com.noox.words.words.ui.list.WordListViewModel
 import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
