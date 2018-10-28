@@ -2,12 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
   android:layout_height="match_parent"
   android:layout_width="match_parent">
 
   <com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/textInputLayout"
+    android:id="@+id/tlEnglish"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -20,12 +19,12 @@
     <com.google.android.material.textfield.TextInputEditText
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      tools:text="English" />
+      android:text="@string/word_english" />
 
   </com.google.android.material.textfield.TextInputLayout>
 
   <com.google.android.material.textfield.TextInputLayout
-    android:id="@+id/textInputLayout2"
+    android:id="@+id/tlSpanish"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -33,12 +32,12 @@
     android:layout_marginEnd="16dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+    app:layout_constraintTop_toBottomOf="@+id/tlEnglish">
 
     <com.google.android.material.textfield.TextInputEditText
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      tools:text="Spanish" />
+      android:text="@string/word_spanish" />
 
   </com.google.android.material.textfield.TextInputLayout>
 
@@ -48,8 +47,8 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="24dp"
     android:layout_marginEnd="16dp"
-    android:text="Button"
+    android:text="@string/word_add"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+    app:layout_constraintTop_toBottomOf="@+id/tlSpanish" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

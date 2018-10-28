@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">Words</string>
+
+  <string name="word_add">Add</string>
+  <string name="word_english">English</string>
+  <string name="word_spanish">Spanish</string>
 </resources>
