@@ -1,11 +1,14 @@
 package com.noox.words.words.ui.list
 
-import com.noox.words.words.data.Word
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.noox.words.core.ui.Event
 import com.noox.words.words.domain.CreateWordUseCase
 import com.noox.words.words.domain.GetAllWordsUseCase
-import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Default
+import kotlinx.coroutines.Job
 
 class WordListViewModel(
     private val getAllWords: GetAllWordsUseCase,
@@ -15,12 +18,15 @@ class WordListViewModel(
   private val job = Job()
   private val scope = CoroutineScope(Default + job)
 
+  private val _createNewWord = MutableLiveData<Event<Unit>>()
+  val createNewWord: LiveData<Event<Unit>>
+    get() = _createNewWord
+
+  // TODO: Use coroutines for get words
   fun getAllWords() = getAllWords.invoke()
 
-  fun onAddWordButtonClick() {
-    scope.launch {
-      createWord(Word("new", "nuevo"))
-    }
+  fun addWord() {
+    _createNewWord.value = Event(Unit)
   }
 
   override fun onCleared() {
