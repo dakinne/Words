@@ -19,8 +19,11 @@ class WordListActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
     binding = DataBindingUtil.setContentView(this, R.layout.word_list_activity)
     binding.viewModel = wordListViewModel
+
+    setSupportActionBar(binding.includedToolbar.toolbar)
 
     val adapter = WordListAdapter()
     binding.wordList.adapter = adapter
@@ -30,6 +33,10 @@ class WordListActivity : AppCompatActivity() {
     })
 
     wordListViewModel.createNewWord.observe(this, EventObserver { openWordForm() })
+  }
+
+  private fun setUpToolbar() {
+    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   private fun openWordForm() = startActivity(Intent(this, WordFormActivity::class.java))

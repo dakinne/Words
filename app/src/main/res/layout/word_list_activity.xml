@@ -9,28 +9,37 @@ xmlns:tools="http://schemas.android.com/tools">
       type="com.noox.words.words.ui.list.WordListViewModel"/>
   </data>
 
-  <FrameLayout
+  <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/wordList"
+    <include android:id="@+id/includedToolbar" layout="@layout/toolbar" />
+
+    <FrameLayout
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:clipToPadding="false"
-      app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-      tools:context=".words.ui.list.WordListActivity"
-      tools:listitem="@layout/word_list_item" />
+      android:layout_height="match_parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-      android:id="@+id/fab"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="end|bottom"
-      android:layout_margin="@dimen/fab_margin"
-      app:srcCompat="@drawable/ic_plus_white_24dp"
-      android:onClick="@{() -> viewModel.addWord()}"/>
+      <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wordList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:context=".words.ui.list.WordListActivity"
+        tools:listitem="@layout/word_list_item" />
 
-  </FrameLayout>
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_plus_white_24dp"
+        android:onClick="@{() -> viewModel.addWord()}"/>
+
+    </FrameLayout>
+
+  </LinearLayout>
 
 </layout>
