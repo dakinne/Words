@@ -6,5 +6,5 @@ import com.noox.words.words.data.Word
 
 class GetAllWordsUseCase(private val wordsRepository: WordRepository) {
 
-  operator fun invoke(): LiveData<List<Word>> = wordsRepository.getAllWords()
+    operator fun invoke(): LiveData<List<Word>> = wordsRepository.getAllWords()
 }

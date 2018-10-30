@@ -7,9 +7,9 @@ import org.koin.android.ext.android.startKoin
 
 class WordsApp : Application() {
 
-  override fun onCreate() {
-    super.onCreate()
+    override fun onCreate() {
+        super.onCreate()
 
-    startKoin(this, listOf(appModule, wordsModule))
-  }
+        startKoin(this, listOf(appModule, wordsModule))
+    }
 }

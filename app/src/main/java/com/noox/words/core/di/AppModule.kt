@@ -11,21 +11,21 @@ import java.util.concurrent.Executors
 
 val appModule = module {
 
-  // Room Database instance
-  single {
-    Room.databaseBuilder(androidApplication(), WordDatabase::class.java, "word-db")
-        .addCallback(object : RoomDatabase.Callback() {
-          override fun onCreate(db: SupportSQLiteDatabase) {
-            super.onCreate(db)
-            Executors.newSingleThreadExecutor().execute {
-              val wordDao = get<WordDatabase>().wordDao()
-              wordDao.insert(Word("one", "uno"))
-              wordDao.insert(Word("two", "dos"))
-              wordDao.insert(Word("three", "tres"))
-              wordDao.insert(Word("four", "cuatro"))
-            }
-          }
-        })
-        .build()
-  }
+    // Room Database instance
+    single {
+        Room.databaseBuilder(androidApplication(), WordDatabase::class.java, "word-db")
+            .addCallback(object : RoomDatabase.Callback() {
+                override fun onCreate(db: SupportSQLiteDatabase) {
+                    super.onCreate(db)
+                    Executors.newSingleThreadExecutor().execute {
+                        val wordDao = get<WordDatabase>().wordDao()
+                        wordDao.insert(Word("one", "uno"))
+                        wordDao.insert(Word("two", "dos"))
+                        wordDao.insert(Word("three", "tres"))
+                        wordDao.insert(Word("four", "cuatro"))
+                    }
+                }
+            })
+            .build()
+    }
 }

@@ -15,22 +15,22 @@ class WordListViewModel(
     private val createWord: CreateWordUseCase
 ) : ViewModel() {
 
-  private val job = Job()
-  private val scope = CoroutineScope(Default + job)
+    private val job = Job()
+    private val scope = CoroutineScope(Default + job)
 
-  private val _createNewWord = MutableLiveData<Event<Unit>>()
-  val createNewWord: LiveData<Event<Unit>>
-    get() = _createNewWord
+    private val _createNewWord = MutableLiveData<Event<Unit>>()
+    val createNewWord: LiveData<Event<Unit>>
+        get() = _createNewWord
 
-  // TODO: Use coroutines for get words
-  fun getAllWords() = getAllWords.invoke()
+    // TODO: Use coroutines for get words
+    fun getAllWords() = getAllWords.invoke()
 
-  fun addWord() {
-    _createNewWord.value = Event(Unit)
-  }
+    fun addWord() {
+        _createNewWord.value = Event(Unit)
+    }
 
-  override fun onCleared() {
-    super.onCleared()
-    job.cancel()
-  }
+    override fun onCleared() {
+        super.onCleared()
+        job.cancel()
+    }
 }

@@ -11,11 +11,11 @@ import org.koin.dsl.module.module
 
 val wordsModule = module {
 
-  viewModel { WordListViewModel(get(), get()) }
+    viewModel { WordListViewModel(get(), get()) }
 
-  single { GetAllWordsUseCase(get()) }
-  single { CreateWordUseCase(get()) }
-  single { WordRepository(get()) }
-  single { WordLocalDataSource(get()) }
-  single { get<WordDatabase>().wordDao() }
+    single { GetAllWordsUseCase(get()) }
+    single { CreateWordUseCase(get()) }
+    single { WordRepository(get()) }
+    single { WordLocalDataSource(get()) }
+    single { get<WordDatabase>().wordDao() }
 }

@@ -8,13 +8,13 @@ import androidx.databinding.DataBindingUtil
 
 class WordFormActivity : AppCompatActivity() {
 
-  private lateinit var binding: WordFormActivityBinding
+    private lateinit var binding: WordFormActivityBinding
 
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    binding = DataBindingUtil.setContentView(this, R.layout.word_form_activity)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.word_form_activity)
 
-    setSupportActionBar(binding.includedToolbar.toolbar)
-  }
+        setSupportActionBar(binding.includedToolbar.toolbar)
+    }
 
 }

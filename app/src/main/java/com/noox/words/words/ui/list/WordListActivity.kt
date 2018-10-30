@@ -13,31 +13,31 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WordListActivity : AppCompatActivity() {
 
-  private val wordListViewModel by viewModel<WordListViewModel>()
+    private val wordListViewModel by viewModel<WordListViewModel>()
 
-  private lateinit var binding: WordListActivityBinding
+    private lateinit var binding: WordListActivityBinding
 
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    binding = DataBindingUtil.setContentView(this, R.layout.word_list_activity)
-    binding.viewModel = wordListViewModel
+        binding = DataBindingUtil.setContentView(this, R.layout.word_list_activity)
+        binding.viewModel = wordListViewModel
 
-    setSupportActionBar(binding.includedToolbar.toolbar)
+        setSupportActionBar(binding.includedToolbar.toolbar)
 
-    val adapter = WordListAdapter()
-    binding.wordList.adapter = adapter
+        val adapter = WordListAdapter()
+        binding.wordList.adapter = adapter
 
-    wordListViewModel.getAllWords().observe(this, Observer {
-      adapter.setWords(it)
-    })
+        wordListViewModel.getAllWords().observe(this, Observer {
+            adapter.setWords(it)
+        })
 
-    wordListViewModel.createNewWord.observe(this, EventObserver { openWordForm() })
-  }
+        wordListViewModel.createNewWord.observe(this, EventObserver { openWordForm() })
+    }
 
-  private fun setUpToolbar() {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-  }
+    private fun setUpToolbar() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
-  private fun openWordForm() = startActivity(Intent(this, WordFormActivity::class.java))
+    private fun openWordForm() = startActivity(Intent(this, WordFormActivity::class.java))
 }

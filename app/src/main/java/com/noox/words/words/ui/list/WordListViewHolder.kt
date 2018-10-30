@@ -8,13 +8,13 @@ class WordListViewHolder(
     private val binding: WordListItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-  fun bind(item: Word) {
-    binding.word = item
-    binding.executePendingBindings()
+    fun bind(item: Word) {
+        binding.word = item
+        binding.executePendingBindings()
 
-    binding.apply {
-      word = item
-      executePendingBindings()
+        binding.apply {
+            word = item
+            executePendingBindings()
+        }
     }
-  }
 }

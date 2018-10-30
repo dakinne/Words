@@ -8,9 +8,9 @@ import androidx.room.Query
 @Dao
 interface WordDao {
 
-  @Insert
-  fun insert(word: Word)
+    @Insert
+    fun insert(word: Word)
 
-  @Query("SELECT * FROM words ORDER BY english ASC")
-  fun getAll(): LiveData<List<Word>>
+    @Query("SELECT * FROM words ORDER BY english ASC")
+    fun getAll(): LiveData<List<Word>>
 }
