@@ -8,6 +8,9 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion versions.compileSdk
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.noox.words"
         minSdkVersion versions.minSdk
@@ -21,10 +24,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-
-    dataBinding {
-        enabled = true
     }
 }
 

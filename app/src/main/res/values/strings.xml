@@ -4,4 +4,8 @@
   <string name="word_add">Add</string>
   <string name="word_english">English</string>
   <string name="word_spanish">Spanish</string>
+
+  <string name="word_form_title">New word</string>
+  
+  <string name="word_list_title">Words</string>
 </resources>

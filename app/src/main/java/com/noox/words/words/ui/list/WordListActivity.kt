@@ -2,13 +2,14 @@ package com.noox.words.words.ui.list
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import com.noox.words.R
 import com.noox.words.databinding.WordListActivityBinding
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.noox.words.core.ui.EventObserver
 import com.noox.words.words.ui.form.WordFormActivity
+import initActionBar
+import initBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WordListActivity : AppCompatActivity() {
@@ -20,10 +21,12 @@ class WordListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.word_list_activity)
+        binding = initBinding(R.layout.word_list_activity)
         binding.viewModel = wordListViewModel
 
-        setSupportActionBar(binding.includedToolbar.toolbar)
+        initActionBar(binding.includedToolbar.toolbar) {
+            setTitle(R.string.word_list_title)
+        }
 
         val adapter = WordListAdapter()
         binding.wordList.adapter = adapter
@@ -33,10 +36,6 @@ class WordListActivity : AppCompatActivity() {
         })
 
         wordListViewModel.createNewWord.observe(this, EventObserver { openWordForm() })
-    }
-
-    private fun setUpToolbar() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private fun openWordForm() = startActivity(Intent(this, WordFormActivity::class.java))

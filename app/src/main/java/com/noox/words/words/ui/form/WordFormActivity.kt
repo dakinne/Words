@@ -4,7 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.noox.words.R
 import com.noox.words.databinding.WordFormActivityBinding
-import androidx.databinding.DataBindingUtil
+import initActionBar
+import initBinding
 
 class WordFormActivity : AppCompatActivity() {
 
@@ -12,9 +13,16 @@ class WordFormActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.word_form_activity)
+        binding = initBinding(R.layout.word_form_activity)
 
-        setSupportActionBar(binding.includedToolbar.toolbar)
+        initActionBar(binding.includedToolbar.toolbar) {
+            setTitle(R.string.word_form_title)
+            setDisplayHomeAsUpEnabled(true)
+        }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }
