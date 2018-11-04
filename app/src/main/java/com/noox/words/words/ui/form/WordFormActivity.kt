@@ -6,6 +6,7 @@ import com.noox.words.R
 import com.noox.words.databinding.WordFormActivityBinding
 import initActionBar
 import initBinding
+import showKeyboard
 
 class WordFormActivity : AppCompatActivity() {
 
@@ -19,6 +20,8 @@ class WordFormActivity : AppCompatActivity() {
             setTitle(R.string.word_form_title)
             setDisplayHomeAsUpEnabled(true)
         }
+
+        showKeyboard()
     }
 
     override fun onSupportNavigateUp(): Boolean {
