@@ -55,7 +55,12 @@ class WordFormActivity : AppCompatActivity() {
         }
 
         binding.addButton.setOnClickListener {
-            viewModel.addWord(binding.english.text.toString(), binding.spanish.text.toString())
+            addWord()
+        }
+
+        binding.spanish.setOnEditorActionListener { _, _, _ ->
+                addWord()
+                true
         }
 
         showKeyboard()
@@ -67,6 +72,10 @@ class WordFormActivity : AppCompatActivity() {
 
     private fun onWordDataChanged() {
         viewModel.wordDataChanged(binding.english.text.toString(), binding.spanish.text.toString())
+    }
+
+    private fun addWord() {
+        viewModel.addWord(binding.english.text.toString(), binding.spanish.text.toString())
     }
 
     override fun onSupportNavigateUp(): Boolean {
