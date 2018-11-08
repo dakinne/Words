@@ -4,9 +4,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools">
 
   <data>
-    <variable
-      name="viewModel"
-      type="com.noox.words.words.ui.list.WordListViewModel"/>
+    <variable name="viewModel" type="com.noox.words.words.ui.list.WordListViewModel"/>
   </data>
 
   <LinearLayout

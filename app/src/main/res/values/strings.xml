@@ -6,6 +6,8 @@
   <string name="word_spanish">Spanish</string>
 
   <string name="word_form_title">New word</string>
+  <string name="word_form_add_word_has_failed">Error!! The word has not added</string>
   
   <string name="word_list_title">Words</string>
+  <string name="word_list_word_added_successful">Congrats!! You have a new word</string>
 </resources>

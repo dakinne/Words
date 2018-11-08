@@ -2,6 +2,7 @@ package com.noox.words.words.ui.list
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import com.noox.words.R
 import com.noox.words.databinding.WordListActivityBinding
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,10 @@ import initBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class WordListActivity : AppCompatActivity() {
+
+    companion object {
+        const val RC_ADD_WORD = 1
+    }
 
     private val wordListViewModel by viewModel<WordListViewModel>()
 
@@ -38,5 +43,11 @@ class WordListActivity : AppCompatActivity() {
         wordListViewModel.createNewWord.observe(this, EventObserver { openWordForm() })
     }
 
-    private fun openWordForm() = startActivity(Intent(this, WordFormActivity::class.java))
+    private fun openWordForm() = startActivityForResult(Intent(this, WordFormActivity::class.java), RC_ADD_WORD)
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (RC_ADD_WORD == requestCode && RESULT_OK == resultCode) {
+            Toast.makeText(this, R.string.word_list_word_added_successful, Toast.LENGTH_SHORT).show()
+        }
+    }
 }
