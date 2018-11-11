@@ -1,30 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-  <data>
-    <variable
-      name="clickListener"
-      type="android.view.View.OnClickListener"/>
-    <variable
-      name="word"
-      type="com.noox.words.words.data.Word"/>
-  </data>
+    <data>
 
-  <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="@{clickListener}">
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
 
-    <TextView
-      android:id="@+id/word_item_english"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@{word.english}"
-      android:textAppearance="?attr/textAppearanceListItem"
-      tools:text="English word"/>
+        <variable
+            name="word"
+            type="com.noox.words.words.data.Word" />
+    </data>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:onClick="@{clickListener}"
+        android:paddingLeft="@dimen/item_padding_horizontal"
+        android:paddingRight="@dimen/item_padding_horizontal">
+
+        <TextView
+            android:id="@+id/word_item_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{word.english}"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintBottom_toTopOf="@id/word_item_spanish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="English word" />
+
+        <TextView
+            android:id="@+id/word_item_spanish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{word.spanish}"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/word_item_english"
+            tools:text="Spanish word" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
